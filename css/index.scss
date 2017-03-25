@@ -1,0 +1,27 @@
+$imgStyleBorder:1px solid #ccc !default;
+$imgStylePadding:2px !default;
+$imgStyleRadius:8px !default;
+
+@mixin img-border($border:$imgStyleBorder,$padding:$imgStylePadding){
+	border:$border;
+	padding:$padding;
+}
+@mixin img-rounded($radius:$imgStyleRadius){
+	border-radius:$radius;
+}
+@mixin box-shadow($shadow...){
+	-webkit-box-shadow:$shadow;
+	-moz-box-shadow:$shadow;
+	box-shadow:$shadow;
+}
+$linkColor:red blue !default;
+a{
+	color:nth($linkColor,1);
+}
+.img-border{
+	@include img-border;
+}
+
+.img-rounded{
+	@include img-rounded;
+}
