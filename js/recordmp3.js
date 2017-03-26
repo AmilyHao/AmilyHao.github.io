@@ -7,10 +7,10 @@
         config.sampleRate = config.sampleRate || 44100;
         config.bitRate = config.bitRate || 128;
 
-        navigator.getUserMedia = navigator.mediaDevices.getUserMedia ||
-                                 navigator.mediaDevices.webkitGetUserMedia ||
-                                 navigator.mediaDevices.mozGetUserMedia ||
-                                 navigator.mediaDevices.msGetUserMedia;
+        navigator.getUserMedia = navigator.getUserMedia ||
+                                 navigator.webkitGetUserMedia ||
+                                 navigator.mozGetUserMedia ||
+                                 navigator.msGetUserMedia;
 
         if (navigator.getUserMedia) {
             navigator.getUserMedia({
