@@ -41,7 +41,7 @@
                         case 'end':
                             log('MP3大小：', e.data.buf.length);
                             if (mp3ReceiveSuccess) {
-                                mp3ReceiveSuccess(new Blob(e.data.buf, { type: 'audio/mp3' }));
+                                //mp3ReceiveSuccess(new Blob(e.data.buf, { type: 'audio/mp3' }));
                             }
                             break;
                         case 'error':
