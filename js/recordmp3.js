@@ -30,6 +30,7 @@
                 };
 
                 var realTimeWorker = new Worker('js/worker-realtime.js');
+                console.log(realTimeWorker);
                 realTimeWorker.onmessage = function (e) {
                     switch (e.data.cmd) {
                         case 'init':
