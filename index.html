@@ -1,22 +1,376 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>个人主页</title>
-	<link rel="stylesheet" href="css/base.css" />
-
+<html>
+<head lang="zh-CN">
+  <meta charset="UTF-8">
+  <title>amily hao</title>
+  <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="css/font-awesome.min.css"/>
+  <link rel="stylesheet" href="css/base.css"/>
+  <link rel="stylesheet" href="css/self.css"/>
 </head>
 <body>
-	<p>1、在sass的大多数地方，中划线命名和下划线命名的内容是互通的，除了变量，也包括对混合器和Sass函数的命名。但是在sass中纯css部分不互通，比如类名、ID或属性名。</p>
-	<p>2、如果想要在嵌套的选择器里边立刻应用一个类似于:hover的伪类。为了解决这种以及其他情况，sass提供了一个特殊结构&。在使用嵌套规则时，父选择器能对于嵌套规则如何解开提供更好的控制。它就是一个简单的&符号，且可以放在任何一个选择器可出现的地方。</p>
-	<p>3、处理群组选择器规则嵌套上的强大能力，正是sass在减少重复敲写方面的贡献之一。尤其在当嵌套级别达到两层甚至三层以上时，与普通的css编写方式相比，只写一遍群组选择器大大减少了工作量。</p>
-	<p>4、在sass中，不仅仅css规则可以嵌套，对属性进行嵌套也可以减少很多重复性的工作。尽管编写属性涉及的重复不像编写选择器那么糟糕，但是要反复写也是非常烦人的。嵌套属性的规则是这样的：把属性名从中划线—的地方断开，在根属性后边添加一个冒号：，紧跟一个{}块，把子属性部分写在这个{}块中。就像css选择器嵌套一样，sass会把你的子属性一一解开，把根属性和子属性部分通过中划线－连接起来。</p>
-	<p>5、css有一个特别不常用的特性，即@import规则，它允许在一个css文件中导入其他css文件。然而，后果是只有执行到@import时，浏览器才会去下载其他css文件，这导致页面加载起来特别慢。sass也有一个@import规则，但不同的是，sass的@import规则在生成css文件时就把相关文件导入进来。 使用sass的@import规则并不需要指明被导入文件的全名，你可以省略.sass或.scss文件后缀。 </p>
-	<p>6、假如你写了一个可被他人通过@import导入的sass库文件，你可能希望导入者可以定制修改sass库文件中的某些值。使用sass的!default标签可以实现这个目的。它很像css属性中!important标签的对立面，不同的是!default用于变量，含义是：如果这个变量被声明赋值了，那就用它声明的值，否则就用这个默认值。</p>
-	<p>7、静默注释：它们以//开头，注释内容直到行末。</p>
-	<p>8、保持sass条理性和可读性的最基本的三个方法：嵌套、导入和注释。</p>
-	<p>9、混合器：可以通过sass的混合器实现大段样式的重用。混合器使用@mixin标识符定义.通过@include来使用这个混合器，放在你希望的任何地方。@include调用会把混合器中的所有样式提取出来放在@include被调用的地方。混合器大量的重用可能会导致生成的样式表过大，导致加载缓慢，注意混合气的使用场景，避免滥用。利用混合器，可以很容易地在样式表的不同地方共享样式。如果你发现自己在不停地重复一段样式，那就应该把这段样式构造成优良的混合器，尤其是这段样式本身就是一个逻辑单元，比如说是一组放在一起有意义的属性。判断一组属性是否应该组合成一个混合器，一条经验法则就是你能否为这个混合器想出一个好的名字。混合器在某些方面跟css类很像。都是让你给一大段样式命名，所以在选择使用哪个的时候可能会产生疑惑。最重要的区别就是类名是在html文件中应用的，而混合器是在样式表中应用的。这就意味着类名具有语义化含义，而不仅仅是一种展示性的描述：用来描述html元素的含义而不是html元素的外观。而另一方面，混合器是展示性的描述，用来描述一条css规则应用之后会产生怎样的效果。</p>
-	<p>9-1、混合器中不仅可以包含属性，也可以包含css规则，包含</p>
+<div id="pageloader" >
+  <div class="loader-img">
+    <img src="img/loader.gif" alt="">
+  </div>
+</div>
+  <div class="header">
+    <a href="javascript:void(0)" class="header-flex">
+      <i class="fa fa-hand-o-down"></i>
+    </a>
+  </div>
+  <div class="nav-outer">
+    <div class="nav">
+      <div class="row">
+        <div class="span3">
+          <a href="" class="nav-logo">amily hao</a>
+        </div>
+        <div class="span9">
+          <ul class="sf-menu">
+            <li>
+              <a href="#personal-profile" class="active" >Personal Details</a>
+            </li>
+            <li>
+              <a href="#work-experience">Experience</a>
+            </li>
+            <li>
+              <a href="#education">Education</a>
+            </li>
+
+            <li>
+              <a href="#skills">Skills</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div id="personal-profile">
+    <div class="text-center">
+      <div class="title">
+        <h1>我的信息</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="span3">
+        <img src="img/me.jpg" class="responsive-img" alt=""/>
+      </div>
+      <div class="span4">
+        <ul class="personal-details">
+          <li>姓名: amily hao</li>
+          <li>毕业学校: 辽宁师范大学</li>
+          <li>现所在地: 北京</li>
+          <li>电话: 15110297244</li>
+          <li>
+            Email:
+            <a href="mailto:bx_hj627@163.com">bx_hj627@163.com</a>
+          </li>
+          <li>
+            Github:
+            <a href="https://github.com/amilyhao" target="_blank">Link</a>
+          </li>
+          <li>
+            个人主页:
+            <a href="https://amilyhao.github.io/" target="_blank">Link</a>
+          </li>
+        </ul>
+      </div>
+      <div class="span5 self-introduce">
+        <h3 >个人简介</h3>
+
+        <p>我本科的专业是计算机科学与技术，大学四年的生活为以后的编程的道路，奠定了坚实的基础。
+        </p>
+
+        <p>本科阶段的课程中设置了C语言、C++、JAVA、数据结构，计算机原理、汇编语言等编程相关科目，在大学学习了网页制作课程，通过学习ps、html、js，flash对web开发有了一定的了解，也初步学习了 前端的知识，有了一定的js的基础，为自己前端生涯铺路。
+        </p>
+
+        <p>
+          我08年来到北京，开始了北漂之旅，真正的走上了前端的道路。
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="work-experience">
+    <div class="text-center">
+      <div class="title">
+        <h1>工作经验</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="section">
+        <div class="span3">
+          <div class="left-title">
+           <h1>
+             <span>
+               2011
+               <small>11月</small>
+             </span>
+             -
+             <span>至今</span>
+           </h1>
+            <h3>优信集团</h3>
+          </div>
+        </div>
+        <div class="span9">
+          <div class="right-item">
+            <p class="item-block item-title">优信集团（高级前端开发工程师）</p>
+            <p class="item-block">自2011年加入优信以来，本人在公司担任前端开发工程师职务，参与了优信拍拍卖系统的建设，从无到右，从小到大，在系统的一次次迭代过程中成长。不管走到哪里，都严格要求自己，不断提高专业知识，努力在前端工程师的岗位上不断升华，争做行业的行家。在优信参与的项目有优信拍B2B买家和卖家拍卖平台、优信拍官网、优信拍op、cp系统建设、厂商系统建设、优信二手车官方网站的建设，查客系统、智能定价系统、矩阵物流系统、星睿奔驰置换核查项目、CRM系统、OA系统、中台系统、资金系统、HR系统、优星人app。目前在优信集团-信息技术中心，参与公司的信息化建设，信息技术中心的系统包括移动办公系统、OA系统、中台系统、优星人app、资金系统、hr系统等等。本人目前在部门担任高级前端开发工程师工作，负责优信-信息技术中心的所有项目的前端开发工作。在自己及团队的不断努力下，信息技术系统从无到有，在不断努力下公司信息化智能化系统初见成效。在这些系统的开发过程中不断提升自我能力，努力完善专业知识，高效完成项目内容。在工作过程中不断学习最新技术，将最优的技术运用到项目中，得到了领导的好评。在工作过程中秉承积极客观不断进取的精神，攻克一个个工作难题。
+            </p>
+            <p class="item-block">所做工作</p>
+            <ul class="item-block">
+              <li>实现绝大部分的 js 效果，并形成工具库，方便使用</li>
+              <li>根据网页的设计图,用 HTML5 + CSS3 实现</li>
+              <li>制作js插件适用于所有系统。</li>
+              <li>使用pjax实现页面的无刷新跳转</li>
+              <li>熟练使用ps实现设计图到页面的完美结合，利用zeplin工具辅助代码书写。</li>
+              <li>完美兼容各个浏览器</li>
+            </ul>
+            <div class="item-block">
+              <p>除了技术进步，完成项目外，这里也教会了我规范的开发流程。</p>
+              <p>与产品经理确认开发任务， 查看需求文档，开发中每天写工作日志，与合作的技术人员沟通，每天书写任务日志，完成后部署到测试服务器提交测试， 最后发布版本。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="section">
+        <div class="span3">
+          <div class="left-title">
+            <h1>
+             <span>
+               2011
+               <small>03月</small>
+             </span>
+              -
+              <span>
+                2011
+                <small>10月</small>
+              </span>
+            </h1>
+            <h3>中国水网／固废网</h3>
+          </div>
+        </div>
+        <div class="span9">
+          <div class="right-item">
+            <p class="item-block item-title">水网／固废网（前端开发工程师）</p>
+            <div class="item-block">
+              <p></p>
+            </div>
+            <p class="item-block">所做工作</p>
+            <ul class="item-block">
+              <li>公司所有网站的前端页面制作和js效果书写，包括活动专题页面的制作，英文网站的制作等等。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="section">
+        <div class="span3">
+          <div class="left-title">
+            <h1>
+             <span>
+               2009
+               <small>09月</small>
+             </span>
+              -
+              <span>
+                2011
+                <small>03月</small>
+              </span>
+            </h1>
+            <h3>北京白象新技术有限公司</h3>
+          </div>
+        </div>
+        <div class="span9">
+          <div class="right-item">
+            <p class="item-block item-title">北京白象新技术有限公司（前端开发工程师）</p>
+            <div class="item-block">
+              <p></p>
+            </div>
+            <p class="item-block">所做工作</p>
+            <ul class="item-block">
+              <li>公司所有网站的前端页面制作和js效果书写，包括后台代码的书写等等。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="section">
+        <div class="span3">
+          <div class="left-title">
+            <h1>
+             <span>
+               2008
+               <small>06月</small>
+             </span>
+              -
+              <span>
+                2009
+                <small>09月</small>
+              </span>
+            </h1>
+            <h3>北京绿帆体育发展有限公司</h3>
+          </div>
+        </div>
+        <div class="span9">
+          <div class="right-item">
+            <p class="item-block item-title">北京绿帆体育发展有限公司（前端开发工程师）</p>
+            <div class="item-block">
+              <p></p>
+            </div>
+            <p class="item-block">所做工作</p>
+            <ul class="item-block">
+              <li>公司所有网站的前端页面制作和js效果书写，包括后台代码的书写等等。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="education">
+    <div class="text-center">
+      <div class="title">
+        <h1>教育经历</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="section">
+        <div class="span3">
+          <div class="left-title">
+            <h1>
+             <span>
+               2003
+               <small>9月</small>
+             </span>
+              -
+              <span>
+                2007
+                <small>7月</small>
+              </span>
+            </h1>
+            <h3>辽宁师范大学</h3>
+          </div>
+        </div>
+        <div class="span9">
+          <div class="right-item">
+            <p class="item-block item-title">学校简介</p>
+            <p>辽宁师范大学（Liaoning Normal University），简称“辽师大”，位于辽宁省大连市，是一所经济学、法学、教育学、文学、历史学、理学、工学、医学、管理学、艺术学等多学科协调发展的省属重点大学。我进入了计算机科学与技术专业，在校取得英语四级证书，学习了计算机相关知识。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="skills">
+    <div class="text-center">
+      <div class="title">
+        <h1>我的技能</h1>
+      </div>
+    </div>
+    <div class="row">
+      <h2>CODING</h2>
+      <div class="fixed">
+        <div class="progress-bar-description">Javascript</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left:80%">80%</span>
+          <span class="progress-bar-outer" data-width="80" ></span>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="progress-bar-description">HTML/CSS</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left: 95%">95%</span>
+          <span class="progress-bar-outer" data-width="80" ></span>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="progress-bar-description">Jquery</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left:90%">90%</span>
+          <span class="progress-bar-outer" data-width="90" ></span>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="progress-bar-description">Bootstrap</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left:80%">80%</span>
+          <span class="progress-bar-outer" data-width="80" ></span>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="progress-bar-description">angularjs</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left: 30%">30%</span>
+          <span class="progress-bar-outer" data-width="30" ></span>
+        </div>
+      </div>
+
+      <h2>SOFTWARE</h2>
+      <div class="fixed">
+        <div class="progress-bar-description">sublime</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left: 70%">70%</span>
+          <span class="progress-bar-outer" data-width="70" ></span>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="progress-bar-description">WebStorm</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left: 60%">60%</span>
+          <span class="progress-bar-outer" data-width="60" ></span>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="progress-bar-description">Photoshop</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left:80%">80%</span>
+          <span class="progress-bar-outer" data-width="80" ></span>
+        </div>
+      </div>
+      <h2>CODE VERSIONING TOOLS</h2>
+      <div class="fixed">
+        <div class="progress-bar-description">svn</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left: 50%">50%</span>
+          <span class="progress-bar-outer" data-width="50" ></span>
+        </div>
+      </div>
+      <div class="fixed">
+        <div class="progress-bar-description">git</div>
+        <div class="progress-bar">
+          <span class="progress-point" style="left: 20%">20%</span>
+          <span class="progress-bar-outer" data-width="20" ></span>
+        </div>
+      </div>      
+    </div>
+  </div>
+  <a id="back-to-top" href="#" class="gone">
+  <i class="fa fa-hand-o-up"></i>
+</a>
+  <script src="js/lib/jquery-1.11.1.min.js"></script>
+  <script src="js/ctrl.js"></script>
+  <script src="js/base.js"></script>
+  <script>
+    $(".header").css({
+      'min-height' : $(window).height() + 'px'
+    });
+    $(window).resize(function(){
+      $(".header").css({
+        'min-height' : $(window).height() + 'px'
+      });
+    });
+    $(window).load(function() {
+      $(".loader-img").delay(500).fadeOut();
+      $("#pageloader").delay(1000).fadeOut("slow");
+    });
+    $(document).ready(function(){
+      var resume = new Resume();
+      resume.init();
+    });
+
+  </script>
 </body>
 </html>

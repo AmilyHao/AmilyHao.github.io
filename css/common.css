@@ -1,0 +1,19 @@
+/*现代浏览器*/
+.cf:before,
+.cf:after{
+	content:"";
+	display:table;
+}
+
+.cf:after{
+	clear:both;
+}
+
+/*IE 6/7 浏览器（触发hasLayout）*/
+.cf{
+	*zoom:1;
+}
+header{
+	background-color:#ffcc2f;
+	min-height:180px;
+}

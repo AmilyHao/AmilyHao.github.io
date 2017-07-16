@@ -1,0 +1,46 @@
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans'), local('PTSans-Regular'), url('../font/PTSans-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Bold'), local('PTSans-Bold'), url('../font/PTSans-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Oswald Light'), local('Oswald-Light'), url('../font/Oswald-Light.woff') format('woff');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Oswald Regular'), local('Oswald-Regular'), url('../font/Oswald-Regular.woff') format('woff');
+}
+@font-face {
+  font-family: 'Oswald';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Oswald Bold'), local('Oswald-Bold'), url('../font/Oswald-Bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 400;
+  src: local('PT Sans Narrow'), local('PTSans-Narrow'), url('../font/PTSans-Narrow.woff') format('woff');
+}
+@font-face {
+  font-family: 'PT Sans Narrow';
+  font-style: normal;
+  font-weight: 700;
+  src: local('PT Sans Narrow Bold'), local('PTSans-NarrowBold'), url('../font/PTSans-NarrowBold.woff') format('woff');
+}
+
+
